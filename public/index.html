@@ -1,0 +1,81 @@
+<!doctype html>
+<html ng-app="myModule">
+<head>
+    <base href="/">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/lightbox.css" rel="stylesheet" />
+
+
+
+</head>
+<body ng-controller="AppCtrl">
+    <!--navigation bar-->
+    <nav id="nav-total" class="navbar navbar-inverse navbar-fixed-top">
+        <div class="brand navbar-brand">Family guy</div>
+        <ul id="nav-mid" class="navbar-nav nav">
+            <li><a href="/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+            <li><a href="/blog"><span class="glyphicon glyphicon-eye-open"></span> Blog</a></li>
+            <li><a href="#contact" data-toggle="modal"><span class="glyphicon glyphicon-earphone"></span> Contact</a></li>
+        </ul>
+        <ul id="nav-right" class="nav navbar-nav navbar-right">
+            <li><a href="/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="/login" data-toggle="modal"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+    </nav>
+    <br><br><br><br>
+
+    <div ng-view></div>
+
+
+
+
+    <!-- modal divs here-->
+    <!-- Contact form -->
+    <div class="modal fade" id="contact" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form class="form-horizontal">
+                    <div class="modal-header">
+                        <h4>Contact us</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="contact-name" class="col-lg-2 control-label">Name:</label>
+                            <div class="col-lg-10">
+                                <input type="text" class="form-control" placeholder="Your name">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="" class="btn btn-default" data-dismiss="modal">Cancel</a>
+                        <a href="" class="btn btn-primary" data-dismiss="modal">Submit</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <footer>
+        <div class="navbar navbar-inverse navbar-fixed-bottom">
+            <div class="navbar-inner">
+                <div class="container footer-margin-top">
+                    <p style="color:#777" class="muted">Created by Allen Liu, <label style="font-weight: normal" ng-bind="formatDate() |  date:'MM/dd/yyyy'"></label></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/lightbox.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+    <script src="js/app.js"></script> 
+</body>
+</html>

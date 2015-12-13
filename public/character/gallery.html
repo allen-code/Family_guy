@@ -1,0 +1,87 @@
+<div class="jumbotron">
+    <div class="container">
+        <div>
+            <h1>Hello {{yourName}}! Welcome to our family</h1>
+            <br>
+        </div>
+        <h2><small>Here are some really "adorable" figures in family guy</small></h2>
+        <button class="btn btn-primary">Learn more</button>
+    </div>   
+</div>
+<br>
+<br>
+<br>
+<br>
+
+
+<!--left area-->
+<div id="leftcol" class="col-md-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="well">
+                    <div>
+                        <ul class="nav">
+                            <li>
+                                <label label-default="" class="tree-toggle nav-header" ng-click="sidebarAppearfc=!sidebarAppearfc">Filter Character</label>
+                                <div class="nav tree" ng-init="sidebarAppearfc=false" ng-show="sidebarAppearfc">
+                                    <div class="form-group">
+                                        <br>
+                                        <br>
+                                        Specify character number <input type="number" name="number" step="1" min="0" max="6" ng-model="rowLimit" /><br><br>
+                                        <input type="text" placeholder="Search characters" ng-model="searchText"/>
+                                        <!--Or search by name <input type="text" placeholder="Search name" ng-model="searchText.name " />-->    <br><br>
+                                        Exact Match <input type="checkbox" ng-model="exactMatch" />
+                                        <button type="submit" class="btn btn-default">Submit</button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <label label-default="" class="tree-toggle nav-header" ng-click="sidebarAppearcp=!sidebarAppearcp">Character Profile</label>
+                                <ul class="nav tree" ng-init="sidebarAppearcp=true" ng-show="sidebarAppearcp">
+                                    <li ng-repeat="character in gallery"><a href="/#/character/{{$index}}">{{character.name}}</a>
+                                    </li>                                    
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                <!--right area-->
+<div id="rightcol" class="col-md-9 container-fluid">  
+    <br />
+    <div>
+        <div class="col-lg-12">
+            <h1 class="page-header">Let's meet the characters</h1>
+        </div>
+        <!--Photo gallery-->
+        <!--Photo gallery-->
+        <div class="gallery" id="gallery">
+            <div class="row">
+                <!-- original | orderBy:sortColumn:reverseSort | -->
+                <div class="col-lg-3 col-md-4 col-xs-6" ng-repeat="character in gallery | limitTo:rowLimit | filter:searchText:exactMatch">
+                    <a id="lightboximg" data-title="{{character.name}}" data-lightbox="Family guy" href="{{character.photo}}">
+                        <img class="img-thumbnail img-responsive" ng-src="{{character.photo}}" alt="Photo of {{character.name}}">
+                    </a>
+                    <br><br>
+                    <div class="container col-lg-12 col-md-12 col-xs-12">
+                        <h2>Vote for your favorite character</h2>
+                        <div class="progress" >
+                            <div ng-class={'progress-bar-success':character.likes<30} role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" ng-style="{width:(character.likes+5)+'%'}">{{character.likes}}
+                            </div>
+                        </div>
+                        <a href="/#/character/{{$index}}"><h4><small>More Info</small></h4></a>
+                    </div>
+                    <input style="width:10%;height:10%" type="image" value="like" ng-click="incrementLikes(character)" src="../images/thumbs-up.png"/>
+                    <input style="width:10%;height:10%" type="image" value="dislike" ng-click="decrementLikes(character)" src="../images/thumbs-down.png"/> 
+                </div>
+            </div>
+        </div>
+        <div class="row" ng-include="'character/video.html'"></div>
+    </div>
+    <br />
+    <br />
+</div>

@@ -1,0 +1,46 @@
+#nav-total{
+	transition-property: all 1s ease-in-out;
+	-webkit-transition-property: all 1s ease-in-out;
+	-moz-transition-timing-function: all 1s ease-in-out;
+	-o-transition-property: all 1s ease-in-out;
+}
+
+#nav-total :hover{
+	color: #90C3D4;
+}
+
+#nav-mid{
+	padding-left: 50px;
+}
+
+#nav-right{
+	padding-right: 50px;
+}
+
+#lightboximg img { 
+	margin-top: 10px;
+	width: auto; 
+	height: 230px; 
+}
+
+.page-header{
+	margin-top: 0;
+}
+
+.panel-body{
+	padding-top: 0;
+}
+
+.featuredImg{
+	margin-bottom: 15px;
+}
+
+.gallery input{
+	margin-left: 12%;
+}
+
+
+.footer-margin-top{
+	margin-top: 10px;
+}
+
