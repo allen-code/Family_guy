@@ -70,7 +70,7 @@
                     <div class="container col-lg-12 col-md-12 col-xs-12">
                         <h2>Vote for your favorite character</h2>
                         <div class="progress" >
-                            <div ng-class={'progress-bar-success':character.likes<30} role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" ng-style="{width:(character.likes+5)+'%'}">{{character.likes}}
+                            <div ng-class="character.likes>50 ? 'progress-bar-success':'progress-bar-info'" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" ng-style="{width:(character.likes+5)+'%'}">{{character.likes}}
                             </div>
                         </div>
                         <a href="/#/character/{{$index}}"><h4><small>More Info</small></h4></a>

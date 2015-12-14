@@ -33,7 +33,7 @@ myApp.controller('AppCtrl', ['$scope', '$http', function($scope, $http) {
 
 
 
-
+        console.log(response);
         $scope.gallery = response;
         $scope.rowLimit = 6;
         $scope.sortColumn = 'name';
