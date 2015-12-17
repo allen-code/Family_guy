@@ -1,0 +1,130 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'publish' ]
+2 info using npm@2.11.3
+3 info using node@v0.12.7
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec { raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/Users/allen/Documents/web/Family_guy',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /Users/allen/.npm/family-guy/1.0.0/package.tgz not in flight; packing
+9 verbose tar pack [ '/Users/allen/.npm/family-guy/1.0.0/package.tgz',
+9 verbose tar pack   '/Users/allen/Documents/web/Family_guy' ]
+10 verbose tarball /Users/allen/.npm/family-guy/1.0.0/package.tgz
+11 verbose folder /Users/allen/Documents/web/Family_guy
+12 info prepublish family-guy@1.0.0
+13 verbose addLocalTarball adding from inside cache /Users/allen/.npm/family-guy/1.0.0/package.tgz
+14 silly cache afterAdd family-guy@1.0.0
+15 verbose afterAdd /Users/allen/.npm/family-guy/1.0.0/package/package.json not in flight; writing
+16 verbose afterAdd /Users/allen/.npm/family-guy/1.0.0/package/package.json written
+17 silly publish { name: 'family-guy',
+17 silly publish   version: '1.0.0',
+17 silly publish   description: 'Fan made family guy description',
+17 silly publish   main: 'server.js',
+17 silly publish   dependencies:
+17 silly publish    { express: '^4.13.3',
+17 silly publish      'body-parser': '^1.14.1',
+17 silly publish      mongojs: '^0.18.2' },
+17 silly publish   devDependencies: {},
+17 silly publish   scripts:
+17 silly publish    { test: 'echo "Error: no test specified" && exit 1',
+17 silly publish      start: 'node server.js' },
+17 silly publish   repository:
+17 silly publish    { type: 'git',
+17 silly publish      url: 'git+https://github.com/llbbc/Family_guy.git' },
+17 silly publish   author: { name: 'Allen Liu' },
+17 silly publish   license: 'ISC',
+17 silly publish   bugs: { url: 'https://github.com/llbbc/Family_guy/issues' },
+17 silly publish   homepage: 'https://github.com/llbbc/Family_guy#readme',
+17 silly publish   gitHead: 'e704987673c34abab896c835a01e70bf4ac7d760',
+17 silly publish   readme: 'ERROR: No README data found!',
+17 silly publish   _id: 'family-guy@1.0.0',
+17 silly publish   _shasum: '35a2235eb9430c184fea964574efcf9e98f84581',
+17 silly publish   _from: '.' }
+18 verbose getPublishConfig undefined
+19 silly mapToRegistry name family-guy
+20 silly mapToRegistry using default registry
+21 silly mapToRegistry registry https://registry.npmjs.org/
+22 silly mapToRegistry uri https://registry.npmjs.org/family-guy
+23 verbose publish registryBase https://registry.npmjs.org/
+24 silly publish uploading /Users/allen/.npm/family-guy/1.0.0/package.tgz
+25 verbose request uri https://registry.npmjs.org/family-guy
+26 verbose request sending authorization for write operation
+27 info attempt registry request try #1 at 4:43:33 PM
+28 verbose request using bearer token for auth
+29 verbose request id 7f1b863e712436f9
+30 http request PUT https://registry.npmjs.org/family-guy
+31 http 504 https://registry.npmjs.org/family-guy
+32 verbose bad json <html><body><h1>504 Gateway Time-out</h1>
+32 verbose bad json The server didn't respond in time.
+32 verbose bad json </body></html>
+33 error registry error parsing json
+34 info retry will retry, error on last attempt: SyntaxError: Unexpected token <
+34 info retry <html><body><h1>504 Gateway Time-out</h1>
+34 info retry The server didn't respond in time.
+34 info retry </body></html>
+35 info attempt registry request try #2 at 4:44:52 PM
+36 verbose request using bearer token for auth
+37 http request PUT https://registry.npmjs.org/family-guy
+38 http 504 https://registry.npmjs.org/family-guy
+39 verbose bad json <html><body><h1>504 Gateway Time-out</h1>
+39 verbose bad json The server didn't respond in time.
+39 verbose bad json </body></html>
+40 error registry error parsing json
+41 info retry will retry, error on last attempt: SyntaxError: Unexpected token <
+41 info retry <html><body><h1>504 Gateway Time-out</h1>
+41 info retry The server didn't respond in time.
+41 info retry </body></html>
+42 info attempt registry request try #3 at 4:46:57 PM
+43 verbose request using bearer token for auth
+44 http request PUT https://registry.npmjs.org/family-guy
+45 http 504 https://registry.npmjs.org/family-guy
+46 verbose bad json <html><body><h1>504 Gateway Time-out</h1>
+46 verbose bad json The server didn't respond in time.
+46 verbose bad json </body></html>
+47 error registry error parsing json
+48 verbose headers { 'content-type': 'text/html',
+48 verbose headers   'cache-control': 'max-age=300',
+48 verbose headers   'transfer-encoding': 'chunked',
+48 verbose headers   'accept-ranges': 'bytes',
+48 verbose headers   date: 'Thu, 17 Dec 2015 03:48:08 GMT',
+48 verbose headers   via: '1.1 varnish',
+48 verbose headers   connection: 'keep-alive',
+48 verbose headers   'x-served-by': 'cache-akl6421-AKL',
+48 verbose headers   'x-cache': 'MISS',
+48 verbose headers   'x-cache-hits': '0',
+48 verbose headers   'x-timer': 'S1450324020.630448,VS0,VE68096' }
+49 verbose request invalidating /Users/allen/.npm/registry.npmjs.org/family-guy on PUT
+50 error publish Failed PUT 504
+51 verbose stack SyntaxError: Unexpected token <
+51 verbose stack <html><body><h1>504 Gateway Time-out</h1>
+51 verbose stack The server didn't respond in time.
+51 verbose stack </body></html>
+51 verbose stack
+51 verbose stack
+51 verbose stack     at Object.parse (native)
+51 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:197:23)
+51 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:170:14)
+51 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:354:22)
+51 verbose stack     at Request.emit (events.js:110:17)
+51 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1207:14)
+51 verbose stack     at Request.emit (events.js:129:20)
+51 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1153:12)
+51 verbose stack     at IncomingMessage.emit (events.js:129:20)
+51 verbose stack     at _stream_readable.js:908:16
+52 verbose cwd /Users/allen/Documents/web/Family_guy
+53 error Darwin 15.2.0
+54 error argv "node" "/usr/local/bin/npm" "publish"
+55 error node v0.12.7
+56 error npm  v2.11.3
+57 error Unexpected token <
+57 error <html><body><h1>504 Gateway Time-out</h1>
+57 error The server didn't respond in time.
+57 error </body></html>
+58 error If you need help, you may report this error at:
+58 error     <https://github.com/npm/npm/issues>
+59 verbose exit [ 1, true ]

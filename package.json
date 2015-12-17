@@ -1,12 +1,12 @@
 {
-  "name": "Family guy",
+  "name": "family-guy",
   "version": "1.0.0",
-  "description": "",
+  "description": "Fan made family guy description",
   "main": "server.js",
   "dependencies": {
-    "body-parser": "^1.10.2",
-    "express": "^4.11.1",
-    "mongojs": "^0.18.1"
+    "express": "^4.13.3",
+    "body-parser": "^1.14.1",
+    "mongojs": "^0.18.2"
   },
   "devDependencies": {},
   "scripts": {
@@ -15,12 +15,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/llbbc/Family_guy.git"
+    "url": "git+https://github.com/llbbc/Family_guy.git"
   },
-  "author": "",
+  "author": "Allen Liu",
   "license": "ISC",
   "bugs": {
-    "url": ""
+    "url": "https://github.com/llbbc/Family_guy/issues"
   },
-  "homepage": "https://github.com/llbbc"
+  "homepage": "https://github.com/llbbc/Family_guy#readme"
 }

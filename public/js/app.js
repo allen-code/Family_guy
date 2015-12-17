@@ -33,7 +33,7 @@ myApp.controller('AppCtrl', ['$scope', '$http', function($scope, $http) {
 
 
 
-        console.log(response);
+        //console.log(response);
         $scope.gallery = response;
         $scope.rowLimit = 6;
         $scope.sortColumn = 'name';
@@ -52,21 +52,26 @@ myApp.controller('AppCtrl', ['$scope', '$http', function($scope, $http) {
             return '';
         }
 
-        //reviews for the website readers
-        $scope.incrementLikes = function(character) {
-            character.likes++;
-        }
-
-        $scope.decrementLikes = function (character) {
-            character.likes--;
-        }    
 
         $scope.formatDate = function(){
             var dateOut = new Date("October 30, 2015 11:13:00");
             return dateOut;
         }
   });
-
+          //reviews for the website readers
+        $scope.incrementLikes = function(character) {
+            character.likes++;
+            console.log(character._id);
+            $http.put('/gallery', character).success(function(response){
+                console.log(response);
+            });
+        };
+        $scope.decrementLikes = function (character) {
+            character.likes--;
+            $http.put('/gallery', character).success(function(response){
+                console.log(response);
+            });
+        };    
 }]);﻿
 
 myApp.controller('characterCtrl', ['$scope','$routeParams', function($scope, $routeParams){

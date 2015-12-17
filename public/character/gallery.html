@@ -75,8 +75,8 @@
                         </div>
                         <a href="/#/character/{{$index}}"><h4><small>More Info</small></h4></a>
                     </div>
-                    <input style="width:10%;height:10%" type="image" value="like" ng-click="incrementLikes(character)" src="../images/thumbs-up.png"/>
-                    <input style="width:10%;height:10%" type="image" value="dislike" ng-click="decrementLikes(character)" src="../images/thumbs-down.png"/> 
+                    <input style="width:10%;height:10%" ng-model="character.likes" type="image" value="like" ng-click="incrementLikes(character)" src="../images/thumbs-up.png"/>
+                    <input style="width:10%;height:10%" ng-model="character.likes" type="image" value="dislike" ng-click="decrementLikes(character)" src="../images/thumbs-down.png"/> 
                 </div>
             </div>
         </div>
